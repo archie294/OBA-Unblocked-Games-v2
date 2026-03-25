@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -18,16 +17,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Fix permissions
-        run: chmod -R +x node_modules/.bin
+      - name: Build (force working method)
+        run: node node_modules/vite/bin/vite.js build
 
-      - name: Build
-        run: npx vite build
-        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
