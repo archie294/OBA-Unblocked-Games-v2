@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Fix Vite permissions
+        run: chmod +x node_modules/.bin/vite
+        
       - name: Checkout
         uses: actions/checkout@v4
 
