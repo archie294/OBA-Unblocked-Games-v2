@@ -4,5 +4,5 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './',   // ⭐ CHANGE THIS (THIS IS THE FIX)
+  base: '/OBA-Unblocked-Games-v2/',
 })
